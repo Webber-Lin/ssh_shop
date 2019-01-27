@@ -43,7 +43,7 @@
 
                 <prop key="hibernate.cache.provider_class">org.hibernate.cache.spi.RegionFactory</prop>
                 <prop key="hibernate.max_fetch_depth">3</prop>
-                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/testdb</prop>
+                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306</prop>
                 <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
             </props>
 
@@ -60,4 +60,8 @@
 
     <!-- 开启注解事务 -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <!-- Action的配置 -->
+    <!-- 首页访问的Action -->
+    <bean id="indexAction" class="com.lzw.ssh_shop.index.action.IndexAction" scope="prototype" />
 </beans>
