@@ -5,8 +5,8 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-
-    <constant name="struts.devMode" value="false"/>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <constant name="struts.devMode" value="true"/>
     <constant name="struts.objectFactory" value="spring" />
     
     <package name="ssh_shop" extends="struts-default" namespace="/">
@@ -14,6 +14,13 @@
         <action name="index" class="indexAction">
             <result name="index" >/WEB-INF/jsp/index.jsp</result>
         </action>
+
+        <!-- 配置用户模块的Action -->
+        <action name="user_*" class="userAction" method="{1}">
+            <result name="registPage">/WEB-INF/jsp/regist.jsp</result>
+            <allowed-methods>registPage</allowed-methods>
+        </action>
+
     </package>
 
 

@@ -62,6 +62,11 @@
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <!-- Action的配置 -->
+
     <!-- 首页访问的Action -->
     <bean id="indexAction" class="com.lzw.ssh_shop.index.action.IndexAction" scope="prototype" />
+
+    <!-- 用户模块的Action -->
+    <bean id="userAction" class="com.lzw.ssh_shop.user.action.UserAction" scope="prototype"/>
+
 </beans>
