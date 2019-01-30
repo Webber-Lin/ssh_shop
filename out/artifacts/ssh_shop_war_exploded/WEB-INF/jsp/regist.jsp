@@ -13,6 +13,34 @@
     <title>会员注册</title>
     <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
     <link href="${pageContext.request.contextPath}/css/register.css" rel="stylesheet" type="text/css"/>
+
+    <script>
+        function checkForm(){
+            // 校验用户名:
+            // 获得用户名文本框的值:
+            var username = document.getElementById("username").value;
+            if(username == null || username == ''){
+                alert("用户名不能为空!");
+                return false;
+            }
+            // 校验密码:
+            // 获得密码框的值:
+            var password = document.getElementById("password").value;
+            if(password == null || password == ''){
+                alert("密码不能为空!");
+                return false;
+            }
+            // 校验确认密码:
+            var repassword = document.getElementById("repassword").value;
+            if(repassword != password){
+                alert("两次密码输入不一致!");
+                return false;
+            }
+        }
+
+    </script>
+
+
 </head>
 <body>
 <div class="container header">
@@ -28,7 +56,7 @@
             <img src="${pageContext.request.contextPath}/image/header.jpg" width="320" height="50" alt="正品保障" title="正品保障">
         </div>
     </div>
-    
+
     <%@include file="menu.jsp" %>
 
 </div>	<div class="container register">
@@ -38,7 +66,7 @@
                 <div class="title">
                     <strong>会员注册</strong>USER REGISTER
                 </div>
-                <form id="registerForm"  method="post" novalidate="novalidate">
+                <form id="registerForm"  method="post" novalidate="novalidate" onsubmit="return checkForm();">
                     <table>
                         <tbody><tr>
                             <th>
@@ -61,7 +89,7 @@
                                 <span class="requiredField">*</span>确认密码:
                             </th>
                             <td>
-                                <input type="password" name="rePassword" class="text" maxlength="20" autocomplete="off">
+                                <input type="password" id="repassword" name="repassword" class="text" maxlength="20" autocomplete="off">
                             </td>
                         </tr>
                         <tr>
@@ -77,30 +105,16 @@
                                 姓名:
                             </th>
                             <td>
-                                <input type="text" name="memberAttribute_1" class="text" maxlength="200">
+                                <input type="text" name="name" class="text" maxlength="200">
                             </td>
                         </tr>
+
                         <tr>
                             <th>
-                                性别:
+                                电话:
                             </th>
                             <td>
-												<span class="fieldSet">
-														<label>
-															<input type="radio" name="memberAttribute_2" value="male">男
-														</label>
-														<label>
-															<input type="radio" name="memberAttribute_2" value="female">女
-														</label>
-												</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                出生日期:
-                            </th>
-                            <td>
-                                <input type="text" name="memberAttribute_3" class="text" onfocus="WdatePicker();">
+                                <input type="text" name="phone" class="text" />
                             </td>
                         </tr>
 
@@ -109,7 +123,7 @@
                                 地址:
                             </th>
                             <td>
-                                <input type="text" name="memberAttribute_5" class="text" maxlength="200">
+                                <input type="text" name="addr" class="text" maxlength="200"/>
                             </td>
                         </tr>
                         <tr>
