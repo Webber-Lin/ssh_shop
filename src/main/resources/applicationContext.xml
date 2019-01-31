@@ -50,6 +50,14 @@
         </property>
 
 
+
+        <!-- 配置Hibernate的映射文件 -->
+        <property name="mappingResources">
+            <list>
+                <value>com/lzw/ssh_shop/user/vo/User.hbm.xml</value>
+            </list>
+        </property>
+
     </bean>
 
     <!-- 事务管理: -->
@@ -67,6 +75,18 @@
     <bean id="indexAction" class="com.lzw.ssh_shop.index.action.IndexAction" scope="prototype" />
 
     <!-- 用户模块的Action -->
-    <bean id="userAction" class="com.lzw.ssh_shop.user.action.UserAction" scope="prototype"/>
+    <bean id="userAction" class="com.lzw.ssh_shop.user.action.UserAction" scope="prototype">
+        <!-- 注入Service -->
+        <property name="userService" ref="userService"/>
+    </bean>
 
+    <!-- Service的配置 -->
+    <bean id="userService" class="com.lzw.ssh_shop.user.service.UserService">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+    <!-- Dao的配置 -->
+    <bean id="userDao" class="com.lzw.ssh_shop.user.dao.UserDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 </beans>
