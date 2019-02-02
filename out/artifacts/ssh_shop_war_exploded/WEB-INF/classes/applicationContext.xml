@@ -50,7 +50,6 @@
         </property>
 
 
-
         <!-- 配置Hibernate的映射文件 -->
         <property name="mappingResources">
             <list>

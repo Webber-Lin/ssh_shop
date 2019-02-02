@@ -12,4 +12,6 @@ public class IndexAction extends ActionSupport {
     public String execute(){
         return "index";
     }
+
+
 }

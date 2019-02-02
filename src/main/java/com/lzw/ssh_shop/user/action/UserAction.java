@@ -49,6 +49,10 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
         }
         return NONE;
 
+    }
 
+    //用户注册的方法：
+    public String regist(){
+        return NONE;
     }
 }

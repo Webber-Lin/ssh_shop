@@ -18,7 +18,8 @@
         <!-- 配置用户模块的Action -->
         <action name="user_*" class="userAction" method="{1}">
             <result name="registPage">/WEB-INF/jsp/regist.jsp</result>
-            <allowed-methods>registPage,findByName</allowed-methods>
+            <result name="input">/WEB-INF/jsp/regist.jsp</result>
+            <allowed-methods>registPage,findByName,regist</allowed-methods>
         </action>
 
     </package>
