@@ -18,4 +18,9 @@ public class UserDao extends HibernateDaoSupport {
         }
         return null;
     }
+
+    //注册用户存入数据库代码实现
+    public void save(User user) {
+        this.getHibernateTemplate().save(user);
+    }
 }
