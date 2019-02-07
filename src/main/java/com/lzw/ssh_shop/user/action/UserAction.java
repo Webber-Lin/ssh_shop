@@ -98,4 +98,11 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
             return "loginSuccess";
         }
     }
+
+    //用户退出的方法
+    public String quit(){
+        //销毁session
+        ServletActionContext.getRequest().getSession().invalidate();
+        return "quit";
+    }
 }
