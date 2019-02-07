@@ -79,6 +79,11 @@
             return xmlHttp;
         }
 
+        function change() {
+            var img1=document.getElementById("checkImg");
+            img1.src="${pageContext.request.contextPath}/checkImg.action?"+new Date().getTime();
+            
+        }
     </script>
 
 
@@ -106,6 +111,9 @@
             <div class="main clearfix">
                 <div class="title">
                     <strong>会员注册</strong>USER REGISTER
+                </div>
+                <div>
+                    <s:actionerror />
                 </div>
                 <form id="registerForm" action="${pageContext.request.contextPath}/user_regist.action"  method="post" novalidate="novalidate" onsubmit="return checkForm();">
                     <table>
@@ -178,7 +186,7 @@
                             </th>
                             <td>
 										<span class="fieldSet">
-											<input type="text" id="captcha" name="captcha" class="text captcha" maxlength="4" autocomplete="off"><img id="captchaImage" class="captchaImage" src="${pageContext.request.contextPath}/image/captcha.jhtml" title="点击更换验证码">
+											<input type="text" id="checkcode" name="checkcode" class="text captcha" maxlength="4" autocomplete="off"><img id="checkimg" class="captchaImage" src="${pageContext.request.contextPath}/checkImg.action" onclick="change()" title="点击更换验证码">
 										</span>
                             </td>
                         </tr>

@@ -73,6 +73,9 @@
     <!-- 首页访问的Action -->
     <bean id="indexAction" class="com.lzw.ssh_shop.index.action.IndexAction" scope="prototype" />
 
+    <!-- 配置验证码Action -->
+    <bean id="checkImgAction" class="com.lzw.ssh_shop.user.action.CheckImgAction" scope="prototype" />
+
     <!-- 用户模块的Action -->
     <bean id="userAction" class="com.lzw.ssh_shop.user.action.UserAction" scope="prototype">
         <!-- 注入Service -->
