@@ -48,11 +48,12 @@
                 <div class="title">
                     <strong>会员登录</strong>USER LOGIN
                 </div>
-                <form id="loginForm"  method="post" novalidate="novalidate">
+                <div><s:actionerror /></div>
+                <form id="loginForm" action="${pageContext.request.contextPath}/user_login.action" method="post" novalidate="novalidate">
                     <table>
                         <tbody><tr>
                             <th>
-                                用户名/E-mail:
+                                用户名:
                             </th>
                             <td>
                                 <input type="text" id="username" name="username" class="text" maxlength="20">

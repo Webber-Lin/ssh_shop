@@ -81,4 +81,21 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
     public String loginPage(){
         return "loginPage";
     }
+
+    //登录的方法
+    public String login(){
+        User existUser=userService.login(user);
+        //判断
+        if(existUser==null){
+            //登录失败
+            this.addActionError("登录失败：用户名或密码错误或用户未激活！");
+            return LOGIN;
+        }else {
+            //登录成功
+            //将用户的信息存入到session中
+            ServletActionContext.getRequest().getSession().setAttribute("existUser",existUser);
+            //页面跳转
+            return "loginSuccess";
+        }
+    }
 }
