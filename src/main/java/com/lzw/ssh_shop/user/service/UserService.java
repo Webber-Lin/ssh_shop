@@ -33,4 +33,14 @@ public class UserService {
         //发送激活邮件
         MailUtils.sendMail(user.getEmail(),code);
     }
+
+    //业务层根据激活码查询用户
+    public User findByCode(String code) {
+        return userDao.findByCode(code);
+    }
+
+    //修改用户的状态的方法
+    public void update(User existUser) {
+        userDao.update(existUser);
+    }
 }

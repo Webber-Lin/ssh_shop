@@ -25,7 +25,7 @@
             <result name="registPage">/WEB-INF/jsp/regist.jsp</result>
             <result name="input">/WEB-INF/jsp/regist.jsp</result>
             <result name="msg">/WEB-INF/jsp/msg.jsp</result>
-            <allowed-methods>registPage,findByName,regist</allowed-methods>
+            <allowed-methods>registPage,findByName,regist,active</allowed-methods>
         </action>
 
     </package>
