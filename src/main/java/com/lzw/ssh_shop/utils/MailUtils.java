@@ -1,0 +1,61 @@
+package com.lzw.ssh_shop.utils;
+
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import java.util.Properties;
+
+/**
+ * 邮件发送工具类
+ */
+public class MailUtils {
+
+    /**
+     * 发送邮件的方法
+     * @param to  收件人
+     * @param code 激活码
+     */
+    public static void sendMail(String to,String code){
+        /**
+         * 1.获得一个Session对象.
+         * 2.创建一个代表邮箱的对象Message.
+         * 3.发送邮件Transport
+         */
+
+        //1.获得连接对象
+        Properties props=new Properties();
+        props.setProperty("mail.hots","localhost");
+        Session session=Session.getInstance(props, new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication("service@shop.com","123");
+            }
+        });
+
+        //2.创建邮件对象
+        Message message=new MimeMessage(session);
+        //设置发件人
+        try {
+            message.setFrom(new InternetAddress("service@shop.com"));
+            //设置收件人
+            message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));
+            //设置标题
+            message.setSubject("来自购物天堂商城官方激活邮件");
+            //设置邮件正文
+            message.setContent("<h1>购物天堂商城官方激活邮件！点下面链接完成激活操作！</h1>" +
+                    "<h3><a href='http://192.168.1.15:8888/ssh_shop_war_exploded/user_active.action?code="+code+"'>http://192.168.1.15:8888/ssh_shop_war_exploded/user_active.action?code="+code+"</a></h3>","text/html;charset=UTF-8");
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+        //3.发送邮件：
+        try {
+            Transport.send(message);
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args){
+        sendMail("aaa@shop.com","11111111111111");
+    }
+}

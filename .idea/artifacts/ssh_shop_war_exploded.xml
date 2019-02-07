@@ -42,6 +42,7 @@
           <element id="library" level="project" name="Maven: com.mchange:c3p0:0.9.5.2" />
           <element id="library" level="project" name="Maven: com.mchange:mchange-commons-java:0.2.11" />
           <element id="library" level="project" name="servlet-api" />
+          <element id="library" level="project" name="activation" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="ssh_shop/web/Web" />

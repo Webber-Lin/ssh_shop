@@ -2,6 +2,7 @@ package com.lzw.ssh_shop.user.service;
 
 import com.lzw.ssh_shop.user.dao.UserDao;
 import com.lzw.ssh_shop.user.vo.User;
+import com.lzw.ssh_shop.utils.MailUtils;
 import com.lzw.ssh_shop.utils.UUIDUtils;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,5 +30,7 @@ public class UserService {
         String code= UUIDUtils.getUUID()+UUIDUtils.getUUID();
         user.setCode(code);
         userDao.save(user);
+        //发送激活邮件
+        MailUtils.sendMail(user.getEmail(),code);
     }
 }

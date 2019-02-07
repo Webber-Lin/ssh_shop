@@ -54,6 +54,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
     //用户注册的方法：
     public String regist(){
         userService.save(user);
-        return NONE;
+        this.addActionMessage("注册成功！请去邮箱激活！");
+        return "msg";
     }
 }

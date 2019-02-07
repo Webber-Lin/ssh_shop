@@ -10,6 +10,11 @@
     <constant name="struts.objectFactory" value="spring" />
     
     <package name="ssh_shop" extends="struts-default" namespace="/">
+        <global-results>
+            <result name="msg">/WEB-INF/jsp/msg.jsp</result>
+        </global-results>
+
+
         <!-- 配置首页访问的Action -->
         <action name="index" class="indexAction">
             <result name="index" >/WEB-INF/jsp/index.jsp</result>
@@ -19,6 +24,7 @@
         <action name="user_*" class="userAction" method="{1}">
             <result name="registPage">/WEB-INF/jsp/regist.jsp</result>
             <result name="input">/WEB-INF/jsp/regist.jsp</result>
+            <result name="msg">/WEB-INF/jsp/msg.jsp</result>
             <allowed-methods>registPage,findByName,regist</allowed-methods>
         </action>
 
