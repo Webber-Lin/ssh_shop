@@ -24,8 +24,8 @@
         <action name="user_*" class="userAction" method="{1}">
             <result name="registPage">/WEB-INF/jsp/regist.jsp</result>
             <result name="input">/WEB-INF/jsp/regist.jsp</result>
-            <result name="msg">/WEB-INF/jsp/msg.jsp</result>
-            <allowed-methods>registPage,findByName,regist,active</allowed-methods>
+            <result name="loginPage">/WEB-INF/jsp/login.jsp</result>
+            <allowed-methods>registPage,findByName,regist,active,loginPage</allowed-methods>
         </action>
 
     </package>

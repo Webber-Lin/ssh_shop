@@ -76,4 +76,9 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
         }
         return "msg";
     }
+
+    //跳转到登录页面
+    public String loginPage(){
+        return "loginPage";
+    }
 }
