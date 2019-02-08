@@ -27,4 +27,9 @@ public class ProductService {
     public List<Product> findNew() {
         return productDao.findNew();
     }
+
+    //根据商品ID查询商品
+    public Product findByPid(Integer pid) {
+        return productDao.findByPid(pid);
+    }
 }

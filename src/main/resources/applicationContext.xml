@@ -87,6 +87,13 @@
         <property name="userService" ref="userService"/>
     </bean>
 
+    <!-- 商品模块的Action -->
+    <bean id="productAction" class="com.lzw.ssh_shop.product.action.ProductAction" scope="prototype">
+        <property name="productService" ref="productService"/>
+    </bean>
+
+
+
     <!-- Service的配置 -->
     <bean id="userService" class="com.lzw.ssh_shop.user.service.UserService">
         <property name="userDao" ref="userDao"/>
