@@ -2,12 +2,14 @@ package com.lzw.ssh_shop.category.service;
 
 import com.lzw.ssh_shop.category.dao.CategoryDao;
 import com.lzw.ssh_shop.category.vo.Category;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 /**
  * 一级分类的业务层对象
  */
+@Transactional
 public class CategoryService {
     //注入CategoryDao
     private CategoryDao categoryDao;

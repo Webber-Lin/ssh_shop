@@ -55,6 +55,7 @@
             <list>
                 <value>com/lzw/ssh_shop/user/vo/User.hbm.xml</value>
                 <value>com/lzw/ssh_shop/category/vo/Category.hbm.xml</value>
+                <value>com/lzw/ssh_shop/product/vo/Product.hbm.xml</value>
             </list>
         </property>
 
@@ -74,6 +75,7 @@
     <!-- 首页访问的Action -->
     <bean id="indexAction" class="com.lzw.ssh_shop.index.action.IndexAction" scope="prototype">
         <property name="categoryService" ref="categoryService"/>
+        <property name="productService" ref="productService" />
     </bean>
 
     <!-- 配置验证码Action -->
@@ -94,6 +96,10 @@
         <property name="categoryDao" ref="categoryDao"/>
     </bean>
 
+    <bean id="productService" class="com.lzw.ssh_shop.product.service.ProductService">
+        <property name="productDao" ref="productDao"/>
+    </bean>
+
 
     <!-- Dao的配置 -->
     <bean id="userDao" class="com.lzw.ssh_shop.user.dao.UserDao">
@@ -101,6 +107,10 @@
     </bean>
 
     <bean id="categoryDao" class="com.lzw.ssh_shop.category.dao.CategoryDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="productDao" class="com.lzw.ssh_shop.product.dao.ProductDao">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
