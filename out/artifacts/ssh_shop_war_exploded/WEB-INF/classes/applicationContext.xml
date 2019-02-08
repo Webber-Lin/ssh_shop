@@ -56,6 +56,7 @@
                 <value>com/lzw/ssh_shop/user/vo/User.hbm.xml</value>
                 <value>com/lzw/ssh_shop/category/vo/Category.hbm.xml</value>
                 <value>com/lzw/ssh_shop/product/vo/Product.hbm.xml</value>
+                <value>com/lzw/ssh_shop/categorysecond/vo/CategorySecond.hbm.xml</value>
             </list>
         </property>
 

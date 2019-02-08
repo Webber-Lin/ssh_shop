@@ -8,5 +8,11 @@
             <generator class="native" />
         </id>
         <property name="cname" />
+
+        <!-- 配置二级分类的集合 -->
+        <set  order-by="csid" name="categorySeconds" lazy="false">
+            <key column="cid"/>
+            <one-to-many class="com.lzw.ssh_shop.categorysecond.vo.CategorySecond"/>
+        </set>
     </class>
 </hibernate-mapping>
