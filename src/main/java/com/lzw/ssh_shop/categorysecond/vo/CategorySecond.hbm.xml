@@ -8,6 +8,13 @@
             <generator class="native"/>
         </id>
         <property name="csname"/>
-        <many-to-one name="category" class="com.lzw.ssh_shop.category.vo.Category" column="cid"/>
+        <!-- 二级分类与一级分类的光联 -->
+        <many-to-one name="category" lazy="false" class="com.lzw.ssh_shop.category.vo.Category" column="cid"/>
+
+        <!-- 二级分类与商品的光联 -->
+        <set name="products">
+            <key column="csid"/>
+            <one-to-many class="com.lzw.ssh_shop.product.vo.Product"/>
+        </set>
     </class>
 </hibernate-mapping>

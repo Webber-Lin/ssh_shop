@@ -4,6 +4,8 @@ import com.lzw.ssh_shop.category.service.CategoryService;
 import com.lzw.ssh_shop.category.vo.Category;
 import com.lzw.ssh_shop.product.service.ProductService;
 import com.lzw.ssh_shop.product.vo.Product;
+import com.lzw.ssh_shop.utils.PageBean;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -21,6 +23,12 @@ public class ProductAction extends ActionSupport implements ModelDriven<Product>
     private Integer cid;
     //注入一级分类的Service
     private CategoryService categoryService;
+    //接收当前页数
+    private int page;
+
+    public void setPage(int page) {
+        this.page = page;
+    }
 
     public void setCategoryService(CategoryService categoryService) {
         this.categoryService = categoryService;
@@ -28,6 +36,10 @@ public class ProductAction extends ActionSupport implements ModelDriven<Product>
 
     public void setCid(Integer cid) {
         this.cid = cid;
+    }
+
+    public Integer getCid() {
+        return cid;
     }
 
     public void setProductService(ProductService productService) {
@@ -48,6 +60,9 @@ public class ProductAction extends ActionSupport implements ModelDriven<Product>
     //根据分类的id查询商品
     public String findByCid(){
         // List<Category> cList=categoryService.findAll();
+        PageBean<Product> pageBean=productService.findByPageCid(cid,page); //根据一级分类查询商品，带分页查询
+        //将PageBean存入到值栈中
+        ActionContext.getContext().getValueStack().set("pageBean",pageBean);
         return "findByCid";
     }
 }

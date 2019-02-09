@@ -16,5 +16,6 @@
         <property name="pdate"/>
 
 
+        <many-to-one name="categorySecond" lazy="false" class="com.lzw.ssh_shop.categorysecond.vo.CategorySecond" column="csid"/>
     </class>
 </hibernate-mapping>

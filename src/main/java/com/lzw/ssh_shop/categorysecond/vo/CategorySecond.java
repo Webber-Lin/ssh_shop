@@ -1,6 +1,10 @@
 package com.lzw.ssh_shop.categorysecond.vo;
 
 import com.lzw.ssh_shop.category.vo.Category;
+import com.lzw.ssh_shop.product.vo.Product;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * 二级分类的实体
@@ -10,6 +14,8 @@ public class CategorySecond {
     private String csname;
     //所属一级分类.存的是一级分类的对象
     private Category category;
+    //配置商品集合
+    private Set<Product> products=new HashSet<>();
 
     public Integer getCsid() {
         return csid;
@@ -33,5 +39,13 @@ public class CategorySecond {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public Set<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(Set<Product> products) {
+        this.products = products;
     }
 }
