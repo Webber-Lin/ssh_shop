@@ -93,6 +93,9 @@
         <property name="productService" ref="productService"/>
     </bean>
 
+    <!-- 购物车的Action -->
+    <bean id="cartAction" class="com.lzw.ssh_shop.cart.action.CartAction" scope="prototype" />
+
 
 
     <!-- Service的配置 -->
