@@ -39,7 +39,8 @@
         <action name="product_*" class="productAction" method="{1}">
             <result name="findByPid">/WEB-INF/jsp/product.jsp</result>
             <result name="findByCid">/WEB-INF/jsp/productList.jsp</result>
-            <allowed-methods>findByPid,findByCid</allowed-methods>
+            <result name="findByCsid">/WEB-INF/jsp/productList.jsp</result>
+            <allowed-methods>findByPid,findByCid,findByCsid</allowed-methods>
         </action>
     </package>
 
