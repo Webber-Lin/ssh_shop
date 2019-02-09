@@ -1,5 +1,6 @@
 package com.lzw.ssh_shop.cart.vo;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -7,7 +8,7 @@ import java.util.Map;
 /**
  * 购物车对象
  */
-public class Cart {
+public class Cart implements Serializable {
     //购物车属性
     //购物项集合：Map的key就是商品id，value：购物项
     private Map<Integer,CartItem> map=new LinkedHashMap<Integer, CartItem>();

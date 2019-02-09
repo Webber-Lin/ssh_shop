@@ -2,13 +2,14 @@ package com.lzw.ssh_shop.category.vo;
 
 import com.lzw.ssh_shop.categorysecond.vo.CategorySecond;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * 一级分类的实体类对象
  */
-public class Category {
+public class Category implements Serializable {
     private Integer cid;
     private String cname;
     //一级分类中存放二级分类的集合:

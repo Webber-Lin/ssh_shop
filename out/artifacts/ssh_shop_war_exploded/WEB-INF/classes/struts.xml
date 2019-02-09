@@ -47,7 +47,8 @@
         <action name="cart_*" class="cartAction" method="{1}">
             <result name="addCart">/WEB-INF/jsp/cart.jsp</result>
             <result name="clearCart">/WEB-INF/jsp/cart.jsp</result>
-            <allowed-methods>addCart,clearCart</allowed-methods>
+            <result name="removeCart">/WEB-INF/jsp/cart.jsp</result>
+            <allowed-methods>addCart,clearCart,removeCart</allowed-methods>
         </action>
     </package>
 

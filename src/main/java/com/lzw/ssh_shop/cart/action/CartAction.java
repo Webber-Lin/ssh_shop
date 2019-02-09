@@ -56,6 +56,17 @@ public class CartAction extends ActionSupport {
         return "clearCart";
     }
 
+    //从购物车中移除购物项的方法
+    public String removeCart(){
+        //获得购物车对象
+        Cart cart=getCart();
+        //调用购物车中移除的方法
+        cart.removeCart(pid);
+        //返回页面
+        return "removeCart";
+
+    }
+
 
     //获得购物车的方法：从session中获得购物车
     private Cart getCart() {
