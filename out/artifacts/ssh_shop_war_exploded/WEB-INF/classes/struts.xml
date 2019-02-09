@@ -46,7 +46,8 @@
         <!-- 购物车的Action -->
         <action name="cart_*" class="cartAction" method="{1}">
             <result name="addCart">/WEB-INF/jsp/cart.jsp</result>
-            <allowed-methods>addCart</allowed-methods>
+            <result name="clearCart">/WEB-INF/jsp/cart.jsp</result>
+            <allowed-methods>addCart,clearCart</allowed-methods>
         </action>
     </package>
 

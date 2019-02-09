@@ -47,6 +47,16 @@ public class CartAction extends ActionSupport {
         return "addCart";
     }
 
+    //清空购物车的执行的方法
+    public String clearCart(){
+        //获得购物车对象
+        Cart cart=getCart();
+        //调用购物车中清空方法
+        cart.clearCart();
+        return "clearCart";
+    }
+
+
     //获得购物车的方法：从session中获得购物车
     private Cart getCart() {
         Cart cart= (Cart) ServletActionContext.getRequest().getSession().getAttribute("cart");
