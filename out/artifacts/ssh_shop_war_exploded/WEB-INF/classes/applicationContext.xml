@@ -94,7 +94,9 @@
     </bean>
 
     <!-- 购物车的Action -->
-    <bean id="cartAction" class="com.lzw.ssh_shop.cart.action.CartAction" scope="prototype" />
+    <bean id="cartAction" class="com.lzw.ssh_shop.cart.action.CartAction" scope="prototype" >
+        <property name="productService" ref="productService"/>
+    </bean>
 
 
 
