@@ -67,6 +67,10 @@ public class CartAction extends ActionSupport {
 
     }
 
+    //我的购物车：执行方法
+    public String myCart(){
+        return "myCart";
+    }
 
     //获得购物车的方法：从session中获得购物车
     private Cart getCart() {

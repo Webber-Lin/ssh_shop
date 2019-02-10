@@ -48,7 +48,8 @@
             <result name="addCart">/WEB-INF/jsp/cart.jsp</result>
             <result name="clearCart">/WEB-INF/jsp/cart.jsp</result>
             <result name="removeCart">/WEB-INF/jsp/cart.jsp</result>
-            <allowed-methods>addCart,clearCart,removeCart</allowed-methods>
+            <result name="myCart">/WEB-INF/jsp/cart.jsp</result>
+            <allowed-methods>addCart,clearCart,removeCart,myCart</allowed-methods>
         </action>
     </package>
 
