@@ -57,6 +57,8 @@
                 <value>com/lzw/ssh_shop/category/vo/Category.hbm.xml</value>
                 <value>com/lzw/ssh_shop/product/vo/Product.hbm.xml</value>
                 <value>com/lzw/ssh_shop/categorysecond/vo/CategorySecond.hbm.xml</value>
+                <value>com/lzw/ssh_shop/order/vo/Order.hbm.xml</value>
+                <value>com/lzw/ssh_shop/order/vo/OrderItem.hbm.xml</value>
             </list>
         </property>
 
@@ -98,6 +100,10 @@
         <property name="productService" ref="productService"/>
     </bean>
 
+    <!-- 订单模块的Action -->
+    <bean id="oderAction" class="com.lzw.ssh_shop.order.action.OrderAction" scope="prototype">
+        <property name="orderService" ref="oderService"/>
+    </bean>
 
 
     <!-- Service的配置 -->
@@ -111,6 +117,10 @@
 
     <bean id="productService" class="com.lzw.ssh_shop.product.service.ProductService">
         <property name="productDao" ref="productDao"/>
+    </bean>
+
+    <bean id="oderService" class="com.lzw.ssh_shop.order.service.OrderService">
+        <property name="orderDao" ref="orderDao" />
     </bean>
 
 
@@ -127,5 +137,8 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
+    <bean id="orderDao" class="com.lzw.ssh_shop.order.dao.OrderDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 
 </beans>

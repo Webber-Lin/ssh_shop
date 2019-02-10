@@ -51,6 +51,12 @@
             <result name="myCart">/WEB-INF/jsp/cart.jsp</result>
             <allowed-methods>addCart,clearCart,removeCart,myCart</allowed-methods>
         </action>
+
+        <!-- 订单的Action -->
+        <action name="order_*" class="oderAction" method="{1}">
+            <result name="saveSuccess">/WEB-INF/jsp/order.jsp</result>
+            <allowed-methods>save</allowed-methods>
+        </action>
     </package>
 
 
