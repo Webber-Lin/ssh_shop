@@ -59,6 +59,7 @@
                 <value>com/lzw/ssh_shop/categorysecond/vo/CategorySecond.hbm.xml</value>
                 <value>com/lzw/ssh_shop/order/vo/Order.hbm.xml</value>
                 <value>com/lzw/ssh_shop/order/vo/OrderItem.hbm.xml</value>
+                <value>com/lzw/ssh_shop/adminuser/vo/AdminUser.hbm.xml</value>
             </list>
         </property>
 
@@ -105,6 +106,12 @@
         <property name="orderService" ref="oderService"/>
     </bean>
 
+    <!-- 后台登录的Action -->
+    <bean id="adminUserAction" class="com.lzw.ssh_shop.adminuser.action.AdminUserAction" scope="prototype">
+        <property name="adminUserService" ref="adminUserService"/>
+    </bean>
+
+
 
     <!-- Service的配置 -->
     <bean id="userService" class="com.lzw.ssh_shop.user.service.UserService">
@@ -123,6 +130,10 @@
         <property name="orderDao" ref="orderDao" />
     </bean>
 
+    <bean id="adminUserService" class="com.lzw.ssh_shop.adminuser.service.AdminUserService">
+        <property name="adminUserDao" ref="adminUserDao"/>
+    </bean>
+
 
     <!-- Dao的配置 -->
     <bean id="userDao" class="com.lzw.ssh_shop.user.dao.UserDao">
@@ -138,6 +149,10 @@
     </bean>
 
     <bean id="orderDao" class="com.lzw.ssh_shop.order.dao.OrderDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="adminUserDao" class="com.lzw.ssh_shop.adminuser.dao.AdminUserDao">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
