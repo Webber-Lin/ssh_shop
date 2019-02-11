@@ -57,7 +57,7 @@
             <result name="saveSuccess">/WEB-INF/jsp/order.jsp</result>
             <result name="findByUidSuccess">/WEB-INF/jsp/orderList.jsp</result>
             <result name="findByOidSuccess">/WEB-INF/jsp/order.jsp</result>
-            <allowed-methods>save,findByUid,findByOid</allowed-methods>
+            <allowed-methods>save,findByUid,findByOid,payOrder</allowed-methods>
         </action>
     </package>
 

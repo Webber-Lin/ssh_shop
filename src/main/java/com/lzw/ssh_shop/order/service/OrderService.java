@@ -55,4 +55,10 @@ public class OrderService {
     public Order findByOid(Integer oid) {
         return orderDao.findByOid(oid);
     }
+
+    //修改订单的操作
+    public void update(Order currOrder) {
+        orderDao.update(currOrder);
+
+    }
 }
