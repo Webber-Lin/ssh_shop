@@ -86,4 +86,10 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
         ActionContext.getContext().getValueStack().set("pageBean",pageBean);
         return "findByUidSuccess";
     }
+
+    //根据订单的id查询订单的方法
+    public String findByOid(){
+        order=orderService.findByOid(order.getOid());
+        return "findByOidSuccess";
+    }
 }

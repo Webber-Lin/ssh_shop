@@ -2,6 +2,7 @@ package com.lzw.ssh_shop.order.dao;
 
 import com.lzw.ssh_shop.order.vo.Order;
 import com.lzw.ssh_shop.utils.PageHibernateCallback;
+import com.sun.org.apache.xpath.internal.operations.Or;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
 import java.util.List;
@@ -33,4 +34,7 @@ public class OrderDao extends HibernateDaoSupport {
         return list;
     }
 
+    public Order findByOid(Integer oid) {
+        return this.getHibernateTemplate().get(Order.class,oid);
+    }
 }
