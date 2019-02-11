@@ -55,7 +55,8 @@
         <!-- 订单的Action -->
         <action name="order_*" class="oderAction" method="{1}">
             <result name="saveSuccess">/WEB-INF/jsp/order.jsp</result>
-            <allowed-methods>save</allowed-methods>
+            <result name="findByUidSuccess">/WEB-INF/jsp/orderList.jsp</result>
+            <allowed-methods>save,findByUid</allowed-methods>
         </action>
     </package>
 
