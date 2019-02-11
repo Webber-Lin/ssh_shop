@@ -59,6 +59,13 @@
             <result name="findByOidSuccess">/WEB-INF/jsp/order.jsp</result>
             <allowed-methods>save,findByUid,findByOid,payOrder,callBack</allowed-methods>
         </action>
+
+        <!-- 配置后台登录的Action -->
+        <action name="adminUser_*" class="adminUserAction" method="{1}">
+            <result name="loginFail">/admin/index.jsp</result>
+            <result name="loginSuccess">/admin/home.jsp</result>
+            <allowed-methods>login</allowed-methods>
+        </action>
     </package>
 
 
