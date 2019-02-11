@@ -111,6 +111,11 @@
         <property name="adminUserService" ref="adminUserService"/>
     </bean>
 
+    <!-- 配置后台一级分类管理的Action -->
+    <bean id="adminCategoryAction" class="com.lzw.ssh_shop.category.adminaction.AdminCategoryAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+    </bean>
+
 
 
     <!-- Service的配置 -->

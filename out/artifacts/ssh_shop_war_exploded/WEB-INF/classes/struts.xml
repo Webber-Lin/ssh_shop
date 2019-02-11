@@ -66,6 +66,12 @@
             <result name="loginSuccess">/admin/home.jsp</result>
             <allowed-methods>login</allowed-methods>
         </action>
+
+        <!-- 配置后台一级分类管理的Action -->
+        <action name="adminCategory_*" class="adminCategoryAction" method="{1}">
+            <result name="findAll">/admin/category/list.jsp</result>
+            <allowed-methods>findAll</allowed-methods>
+        </action>
     </package>
 
 
