@@ -72,7 +72,9 @@
             <result name="findAll">/admin/category/list.jsp</result>
             <result name="saveSuccess" type="redirectAction">adminCategory_findAll.action</result>
             <result name="deleteSuccess" type="redirectAction">adminCategory_findAll.action</result>
-            <allowed-methods>findAll,save,delete</allowed-methods>
+            <result name="editSuccess">/admin/category/edit.jsp</result>
+            <result name="updateSuccess" type="redirectAction">adminCategory_findAll.action</result>
+            <allowed-methods>findAll,save,delete,edit,update</allowed-methods>
         </action>
     </package>
 
