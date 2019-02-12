@@ -34,4 +34,22 @@ public class AdminCategoryAction extends ActionSupport implements ModelDriven<Ca
         ActionContext.getContext().getValueStack().set("cList",cList);
         return "findAll";
     }
+
+    //后台保存一级分类的方法
+    public String save(){
+        //调用Service进行保存
+        categoryService.save(category);
+        //页面跳转
+        return "saveSuccess";
+    }
+
+    //后台删除一级分类的方法
+    public String delete(){
+        //接收cid，可以使用模型驱动。 删除一级分类，同时删除二级分类，必须先根据id查询，再进行删除
+        category=categoryService.findByCid(category.getCid());
+        //删除
+        categoryService.delete(category);
+        //页面跳转
+        return "deleteSuccess";
+    }
 }
