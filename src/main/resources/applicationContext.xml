@@ -116,6 +116,10 @@
         <property name="categoryService" ref="categoryService"/>
     </bean>
 
+    <bean id="adminCategorySecondAction" class="com.lzw.ssh_shop.categorysecond.adminaction.AdminCategorySecondAction" scope="prototype">
+        <property name="categorySecondService" ref="categorySecondService"/>
+    </bean>
+
 
 
     <!-- Service的配置 -->
@@ -139,6 +143,10 @@
         <property name="adminUserDao" ref="adminUserDao"/>
     </bean>
 
+    <bean id="categorySecondService" class="com.lzw.ssh_shop.categorysecond.service.CategorySecondService">
+        <property name="categorySecondDao" ref="categorySecondDao"/>
+    </bean>
+
 
     <!-- Dao的配置 -->
     <bean id="userDao" class="com.lzw.ssh_shop.user.dao.UserDao">
@@ -158,6 +166,10 @@
     </bean>
 
     <bean id="adminUserDao" class="com.lzw.ssh_shop.adminuser.dao.AdminUserDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="categorySecondDao" class="com.lzw.ssh_shop.categorysecond.dao.CategorySecondDao">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
