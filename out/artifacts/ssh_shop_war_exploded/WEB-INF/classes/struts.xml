@@ -95,7 +95,8 @@
             <result name="saveSuccess" type="redirectAction">adminProduct_findAll.action?page=1</result>
             <result name="deleteSuccess" type="redirectAction">adminProduct_findAll.action?page=1</result>
             <result name="editSuccess">/admin/product/edit.jsp</result>
-            <allowed-methods>findAll,addPage,save,delete,edit</allowed-methods>
+            <result name="updateSuccess" type="redirectAction">adminProduct_findAll.action?page=1</result>
+            <allowed-methods>findAll,addPage,save,delete,edit,update</allowed-methods>
         </action>
 
     </package>

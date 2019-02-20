@@ -125,4 +125,9 @@ public class ProductService {
     public void delete(Product product) {
         productDao.delete(product);
     }
+
+    //业务层修改商品的方法
+    public void update(Product product) {
+        productDao.update(product);
+    }
 }
