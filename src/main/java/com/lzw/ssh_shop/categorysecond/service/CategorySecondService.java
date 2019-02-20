@@ -49,4 +49,14 @@ public class CategorySecondService {
     public void save(CategorySecond categorySecond) {
         categorySecondDao.save(categorySecond);
     }
+
+    //业务层根据二级分类的id查询二级分类
+    public CategorySecond findByCsid(Integer csid) {
+        return categorySecondDao.findByCsid(csid);
+    }
+
+    //业务层删除二级分类的方法
+    public void delete(CategorySecond categorySecond) {
+        categorySecondDao.delete(categorySecond);
+    }
 }

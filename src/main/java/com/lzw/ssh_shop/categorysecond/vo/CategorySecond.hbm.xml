@@ -8,10 +8,10 @@
             <generator class="native"/>
         </id>
         <property name="csname"/>
-        <!-- 二级分类与一级分类的光联 -->
+        <!-- 二级分类与一级分类的关联 -->
         <many-to-one name="category" lazy="false" class="com.lzw.ssh_shop.category.vo.Category" column="cid"/>
 
-        <!-- 二级分类与商品的光联 -->
+        <!-- 二级分类与商品的关联 -->
         <set name="products">
             <key column="csid"/>
             <one-to-many class="com.lzw.ssh_shop.product.vo.Product"/>

@@ -82,7 +82,8 @@
             <result name="findAll">/admin/categorysecond/list.jsp</result>
             <result name="addPageSuccess">/admin/categorysecond/add.jsp</result>
             <result name="saveSuccess" type="redirectAction">adminCategorySecond_findAll.action?page=1</result>
-            <allowed-methods>findAll,addPage,save</allowed-methods>
+            <result name="deleteSuccess" type="redirectAction">adminCategorySecond_findAll.action?page=1</result>
+            <allowed-methods>findAll,addPage,save,delete</allowed-methods>
         </action>
     </package>
 
