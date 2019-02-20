@@ -125,6 +125,7 @@
     <!-- 后台商品管理的Action -->
     <bean id="adminProductAction" class="com.lzw.ssh_shop.product.adminaction.AdminProductAction" scope="prototype">
         <property name="productService" ref="productService"/>
+        <property name="categorySecondService" ref="categorySecondService"/>
     </bean>
 
 
