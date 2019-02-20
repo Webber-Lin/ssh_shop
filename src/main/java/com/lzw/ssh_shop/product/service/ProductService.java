@@ -115,4 +115,9 @@ public class ProductService {
         pageBean.setList(list);
         return pageBean;
     }
+
+    //业务层保存商品的方法
+    public void save(Product product) {
+        productDao.save(product);
+    }
 }

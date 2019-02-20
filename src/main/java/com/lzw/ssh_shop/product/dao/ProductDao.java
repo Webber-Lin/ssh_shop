@@ -103,4 +103,9 @@ public class ProductDao extends HibernateDaoSupport {
         }
         return null;
     }
+
+    //dao层保存商品的方法
+    public void save(Product product) {
+        this.getHibernateTemplate().save(product);
+    }
 }

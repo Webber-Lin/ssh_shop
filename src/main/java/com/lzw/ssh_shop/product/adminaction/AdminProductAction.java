@@ -8,7 +8,12 @@ import com.lzw.ssh_shop.utils.PageBean;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import org.apache.commons.io.FileUtils;
+import org.apache.struts2.ServletActionContext;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -44,6 +49,23 @@ public class AdminProductAction extends ActionSupport implements ModelDriven<Pro
         this.page = page;
     }
 
+    //文件上传需要的参数
+    private File upload; //上传的文件
+    private String uploadFileName; //接收文件上传的文件名
+    private String uploadContextType; //接收文件上传的文件的MIME的类型
+
+    public void setUpload(File upload) {
+        this.upload = upload;
+    }
+
+    public void setUploadFileName(String uploadFileName) {
+        this.uploadFileName = uploadFileName;
+    }
+
+    public void setUploadContextType(String uploadContextType) {
+        this.uploadContextType = uploadContextType;
+    }
+
     //带分页的查询商品的执行方法
     public String findAll(){
         //调用Service完成查询操作
@@ -62,5 +84,23 @@ public class AdminProductAction extends ActionSupport implements ModelDriven<Pro
         ActionContext.getContext().getValueStack().set("csList",cslist);
         //页面跳转:
         return "addPageSuccess";
+    }
+
+    //保存商品的方法
+    public String save() throws IOException {
+        //调用Service完成保存的操作
+        product.setPdate(new Date());
+        if(upload!=null){
+            //获得文件上传的磁盘绝对路径
+            String realPath=ServletActionContext.getServletContext().getRealPath("/products");
+            //创建一个文件
+            File diskFile=new File(realPath+"//"+uploadFileName);
+            //文件上传
+            FileUtils.copyFile(upload,diskFile);
+            product.setImage("products/"+uploadFileName);
+        }
+        //将数据保存到数据库
+        productService.save(product);
+        return "saveSuccess";
     }
 }
