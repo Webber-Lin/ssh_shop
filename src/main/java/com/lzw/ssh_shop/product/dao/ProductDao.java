@@ -108,4 +108,9 @@ public class ProductDao extends HibernateDaoSupport {
     public void save(Product product) {
         this.getHibernateTemplate().save(product);
     }
+
+    //Dao层删除商品的方法
+    public void delete(Product product) {
+        this.getHibernateTemplate().delete(product);
+    }
 }
