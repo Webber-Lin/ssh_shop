@@ -116,10 +116,17 @@
         <property name="categoryService" ref="categoryService"/>
     </bean>
 
+    <!-- 后台二级分类管理的Action -->
     <bean id="adminCategorySecondAction" class="com.lzw.ssh_shop.categorysecond.adminaction.AdminCategorySecondAction" scope="prototype">
         <property name="categorySecondService" ref="categorySecondService"/>
         <property name="categoryService" ref="categoryService"/>
     </bean>
+
+    <!-- 后台商品管理的Action -->
+    <bean id="adminProductAction" class="com.lzw.ssh_shop.product.adminaction.AdminProductAction" scope="prototype">
+        <property name="productService" ref="productService"/>
+    </bean>
+
 
 
 

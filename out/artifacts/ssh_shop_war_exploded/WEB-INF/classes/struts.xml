@@ -87,6 +87,13 @@
             <result name="updateSuccess" type="redirectAction">adminCategorySecond_findAll.action?page=1</result>
             <allowed-methods>findAll,addPage,save,delete,edit,update</allowed-methods>
         </action>
+
+        <!-- 配置商品管理的Action -->
+        <action name="adminProduct_*" class="adminProductAction" method="{1}">
+            <result name="findAll">/admin/product/list.jsp</result>
+            <allowed-methods>findAll</allowed-methods>
+        </action>
+
     </package>
 
 
