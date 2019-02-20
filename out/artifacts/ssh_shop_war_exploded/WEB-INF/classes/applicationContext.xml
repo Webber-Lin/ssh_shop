@@ -118,6 +118,7 @@
 
     <bean id="adminCategorySecondAction" class="com.lzw.ssh_shop.categorysecond.adminaction.AdminCategorySecondAction" scope="prototype">
         <property name="categorySecondService" ref="categorySecondService"/>
+        <property name="categoryService" ref="categoryService"/>
     </bean>
 
 

@@ -29,4 +29,9 @@ public class CategorySecondDao extends HibernateDaoSupport {
         }
         return null;
     }
+
+    //dao层保存的二级分类的方法
+    public void save(CategorySecond categorySecond) {
+        this.getHibernateTemplate().save(categorySecond);
+    }
 }

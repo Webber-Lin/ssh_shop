@@ -3,12 +3,14 @@ package com.lzw.ssh_shop.categorysecond.service;
 import com.lzw.ssh_shop.categorysecond.dao.CategorySecondDao;
 import com.lzw.ssh_shop.categorysecond.vo.CategorySecond;
 import com.lzw.ssh_shop.utils.PageBean;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 /**
  * 二级业务管理的业务层类
  */
+@Transactional
 public class CategorySecondService {
     //注入二级分类Dao
     private CategorySecondDao categorySecondDao;
@@ -41,5 +43,10 @@ public class CategorySecondService {
         List<CategorySecond> list=categorySecondDao.findByPage(begin,limit);
         pageBean.setList(list);
         return pageBean;
+    }
+
+    //业务层保存二级分类的方法
+    public void save(CategorySecond categorySecond) {
+        categorySecondDao.save(categorySecond);
     }
 }
