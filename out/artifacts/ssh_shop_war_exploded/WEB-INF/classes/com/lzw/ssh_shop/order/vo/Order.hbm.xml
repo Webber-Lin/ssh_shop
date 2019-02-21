@@ -19,7 +19,7 @@
         <many-to-one name="user" lazy="false" class="com.lzw.ssh_shop.user.vo.User" column="uid"/>
 
         <!-- 订单与订单项关联配置 -->
-        <set name="orderItems" lazy="false" cascade="save-update">
+        <set name="orderItems" order-by="itemid" lazy="false" cascade="save-update">
             <key column="uid"/>
             <one-to-many class="com.lzw.ssh_shop.order.vo.OrderItem"/>
         </set>
