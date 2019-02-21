@@ -57,7 +57,8 @@
             <result name="saveSuccess">/WEB-INF/jsp/order.jsp</result>
             <result name="findByUidSuccess">/WEB-INF/jsp/orderList.jsp</result>
             <result name="findByOidSuccess">/WEB-INF/jsp/order.jsp</result>
-            <allowed-methods>save,findByUid,findByOid,payOrder,callBack</allowed-methods>
+            <result name="updateStateSuccess" type="redirectAction">order_findByUid.action?page=1</result>
+            <allowed-methods>save,findByUid,findByOid,payOrder,callBack,updateState</allowed-methods>
         </action>
 
         <!-- 配置后台登录的Action -->
