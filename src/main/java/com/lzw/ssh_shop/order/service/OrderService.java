@@ -2,6 +2,7 @@ package com.lzw.ssh_shop.order.service;
 
 import com.lzw.ssh_shop.order.dao.OrderDao;
 import com.lzw.ssh_shop.order.vo.Order;
+import com.lzw.ssh_shop.order.vo.OrderItem;
 import com.lzw.ssh_shop.utils.PageBean;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -86,5 +87,10 @@ public class OrderService {
         List<Order> list=orderDao.findByPage(begin,limit);
         pageBean.setList(list);
         return pageBean;
+    }
+
+    //业务层完成根据订单id查询订单项的方法
+    public List<OrderItem> findOrderItem(Integer oid) {
+        return orderDao.findOrderItem(oid);
     }
 }

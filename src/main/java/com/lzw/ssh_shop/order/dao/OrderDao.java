@@ -1,6 +1,7 @@
 package com.lzw.ssh_shop.order.dao;
 
 import com.lzw.ssh_shop.order.vo.Order;
+import com.lzw.ssh_shop.order.vo.OrderItem;
 import com.lzw.ssh_shop.utils.PageHibernateCallback;
 import com.sun.org.apache.xpath.internal.operations.Or;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
@@ -58,6 +59,16 @@ public class OrderDao extends HibernateDaoSupport {
     public List<Order> findByPage(int begin, int limit) {
         String hql="from Order order by ordertime desc";
         List<Order> list=this.getHibernateTemplate().execute(new PageHibernateCallback<Order>(hql,null,begin,limit));
+        if(list!=null&&list.size()>0){
+            return list;
+        }
+        return null;
+    }
+
+    //Dao层的根据订单id查询订单项的方法
+    public List<OrderItem> findOrderItem(Integer oid) {
+        String hql="from OrderItem oi where oi.order.oid=?";
+        List<OrderItem> list= (List<OrderItem>) this.getHibernateTemplate().find(hql,oid);
         if(list!=null&&list.size()>0){
             return list;
         }

@@ -2,10 +2,13 @@ package com.lzw.ssh_shop.order.adminaction;
 
 import com.lzw.ssh_shop.order.service.OrderService;
 import com.lzw.ssh_shop.order.vo.Order;
+import com.lzw.ssh_shop.order.vo.OrderItem;
 import com.lzw.ssh_shop.utils.PageBean;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+
+import java.util.List;
 
 /**
  * 后台订单管理的Action
@@ -41,5 +44,14 @@ public class AdminOrderAction extends ActionSupport implements ModelDriven<Order
         ActionContext.getContext().getValueStack().set("pageBean",pageBean);
         //页面跳转
         return "findAll";
+    }
+
+    //根据订单id查询订单项
+    public String findOrderItem(){
+        //根据订单id查询订单项
+        List<OrderItem> list=orderService.findOrderItem(order.getOid());
+        //通过值栈显示到页面上
+        ActionContext.getContext().getValueStack().set("list",list);
+        return "findOrderItem";
     }
 }
